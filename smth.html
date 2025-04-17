@@ -3,10 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>smth js</title>
+    <title>Ma'lumot qo'shish</title>
+    <style>
+      
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+        font-family: sans-serif;
+      }
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 250px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .dark {
+        body {
+          background-color: #121212;
+          color: #ffffff;
+        }
+         body .dark, label{
+          background-color: #121212;
+          color: #ffffff;
+        }
+           /* body .dark, #inp{
+          background-color: #ffffff;
+          color: #121212;
+        } */
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello</h1>
-    <script type="module" src="./js/smth.js"></script>
+   
+    <h1>Ma'lumot qo'shish</h1>
+    <input id="name" type="text" placeholder="name" />
+    <input id="price" type="number" placeholder="price" />
+    <input id="color" type="text" placeholder="color" />
+    <button id="submit">Jo'natish</button>
+
+    <script>
+      document.getElementById("submit").addEventListener("click", () => {
+        const name = document.getElementById("name").value.trim();
+        const price = document.getElementById("price").value.trim();
+        const color = document.getElementById("color").value.trim();
+
+        if (name && price && color) {
+          const newCard = { name, price, color };
+
+          // Oldingi kartalarni olib, yangi kartani qo‘shamiz
+          const existingCards = JSON.parse(localStorage.getItem("cards")) || [];
+          existingCards.push(newCard);
+          localStorage.setItem("cards", JSON.stringify(existingCards));
+
+          // Asosiy sahifaga o‘tamiz
+          window.location.href = "index.html";
+        } else {
+          alert("Iltimos, barcha maydonlarni to‘ldiring!");
+        }
+      });
+    </script>
   </body>
 </html>

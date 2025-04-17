@@ -14,3 +14,24 @@ export function validator(obj) {
   }
   return false;
 }
+
+export function localAddProduct(what, where) {
+  const result = [...where, what];
+  return result;
+}
+
+export function localRemoveProduct(id, where) {
+  const result = where.filter((element) => element.id !== id);
+  return result;
+}
+
+export function localUpdataProduct(what, where) {
+  const result = where.map((element) => {
+    if (what.id === element.id) {
+      return what;
+    } else {
+      return element;
+    }
+  });
+  return result;
+}

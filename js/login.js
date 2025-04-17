@@ -1,6 +1,35 @@
 import { login } from "./request.js";
 import { validator } from "./utilits.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "true") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+});
+
+darkM.onclick = () => {
+  toggle(!document.documentElement.classList.contains("dark"));
+};
+
+function toggle(isDark) {
+  document.documentElement.classList.toggle("dark");
+
+  localStorage.setItem("theme", isDark ? "true" : "false");
+}
+
+window.addEventListener("storage", (e) => {
+  if (e.newValue === "true") {
+    toggle(true);
+  } else {
+    toggle(false);
+  }
+});
+
+
+
 window.addEventListener("load", function () {
   const user = JSON.parse(localStorage.getItem("user"));
   const currentPage = localStorage.getItem("currentPage");

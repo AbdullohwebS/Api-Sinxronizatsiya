@@ -5,11 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asosiy Sahifa</title>
     <link rel="stylesheet" href="css/output.css" />
+    <style>
+      .card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 250px;
+      }
+      .card h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .btn {
+        margin-top: 10px;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+      .btn-edit {
+        background-color: #ffc107;
+        color: white;
+      }
+      .btn-delete {
+        background-color: #dc3545;
+        color: white;
+      }
+      /* app.css - Agar qo'shimcha CSS kerak bo'lsa */
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+      }
+      .card h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .card p {
+        font-size: 1rem;
+        color: #555;
+      }
+      .btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #45a049;
+      }
+       .dark {
+        body {
+          background-color: #121212;
+          color: #000000;
+        }
+         body .dark, label{
+          background-color: #121212;
+          color: #000000;
+        }
+          body .dark, h1{
+          background-color: #121212;
+          color: #ffffff;
+        }
+           /* body .dark, #inp{
+          background-color: #ffffff;
+          color: #121212;
+        } */
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-gray-100">
+    <div class="Sinxronizatsiya">
+      <button
+        id="darkM"
+        class="border bg-gray-50 p-2 cursor-pointer text-cyan-800"
+      >
+        Dark mode
+      </button>
+    </div>
     <h1 class="my-5 text-5xl text-center font-bold">Asosiy Sahifa</h1>
+    <div class="text-center mb-4">
+      <a href="smth.html">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">
+          Add Card
+        </button>
+      </a>
+    </div>
 
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="./js/app.js" type="module"></script>
+    <div
+      id="cardContainer"
+      class="malumotlar grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 justify-center items-center"
+    ></div>
+
+    <script src="/js/app.js"></script>
+
+    <div id="cardContainer" class="flex flex-wrap justify-center px-4"></div>
   </body>
 </html>
