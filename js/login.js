@@ -28,8 +28,6 @@ window.addEventListener("storage", (e) => {
   }
 });
 
-
-
 window.addEventListener("load", function () {
   const user = JSON.parse(localStorage.getItem("user"));
   const currentPage = localStorage.getItem("currentPage");

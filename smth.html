@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma'lumot qo'shish</title>
     <style>
-      
       body {
         display: flex;
         flex-direction: column;
@@ -36,11 +35,12 @@
           background-color: #121212;
           color: #ffffff;
         }
-         body .dark, label{
+        body .dark,
+        label {
           background-color: #121212;
           color: #ffffff;
         }
-           /* body .dark, #inp{
+        /* body .dark, #inp{
           background-color: #ffffff;
           color: #121212;
         } */
@@ -48,7 +48,6 @@
     </style>
   </head>
   <body>
-   
     <h1>Ma'lumot qo'shish</h1>
     <input id="name" type="text" placeholder="name" />
     <input id="price" type="number" placeholder="price" />
@@ -64,13 +63,11 @@
         if (name && price && color) {
           const newCard = { name, price, color };
 
-          // Oldingi kartalarni olib, yangi kartani qo‘shamiz
           const existingCards = JSON.parse(localStorage.getItem("cards")) || [];
           existingCards.push(newCard);
           localStorage.setItem("cards", JSON.stringify(existingCards));
 
-          // Asosiy sahifaga o‘tamiz
-          window.location.href = "index.html";
+            window.location.href = "index.html";
         } else {
           alert("Iltimos, barcha maydonlarni to‘ldiring!");
         }

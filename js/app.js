@@ -1,4 +1,3 @@
-// Auth tekshirish
 window.addEventListener("load", () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const auth = localStorage.getItem("authPage");
@@ -10,12 +9,11 @@ window.addEventListener("load", () => {
   }
 });
 
-// Card render qilish
 const container = document.getElementById("cardContainer");
 let cards = JSON.parse(localStorage.getItem("cards")) || [];
 
 function renderCards() {
-  container.innerHTML = ""; // Eski kartalarni tozalash
+  container.innerHTML = ""; 
 
   cards.forEach((card, index) => {
     const div = document.createElement("div");
@@ -58,10 +56,8 @@ function editCard(index) {
   }
 }
 
-// Dastlabki render
 renderCards();
 
-// API'dan kartalarni olish va sahifaga chiqarish
 const malumotlar = document.querySelector(".malumotlar");
 
 if (malumotlar) {
